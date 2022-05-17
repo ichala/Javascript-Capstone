@@ -161,22 +161,102 @@ body {
 
 .logo {
   border-radius: 50%;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-title {
   font-size: 20px;
 }
-.card {
-  width: 100px;
-  height: 100px;
+.popup-window {
+  height: 90%;
+  width: 90%;
+  position: fixed;
+  margin: 0 auto;
+  overflow: auto;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: none;
 }
-.card-image {
+.popup-window h2 {
+  color: black;
+}
+.popup-content {
+  background-color: #f4f4f4;
+  margin: 5% auto;
+  padding: 2rem;
+  max-width: 80%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.17);
+}
+.close-window {
+  float: right;
+  font-size: 30px;
+}
+.close-window:hover,
+.close-window:focus {
+  transform: scale(2, 2);
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.popup-food {
+  width: 300px;
+}
+.popup-food img {
   max-width: 100%;
-  max-height: 100%;
+  margin-left: 2rem;
+}
+.meal-title {
+  text-align: center;
+  margin: 1rem;
+}
+.description {
+  letter-spacing: 0.2em;
+}
+.comment-title {
+  text-align: center;
+  margin: 0.8rem;
+}
+.display-comments {
+  display: flex;
+  justify-content: center;
+}
+.add-comm {
+  text-align: center;
+  margin: 0.8rem;
+}
+.form {
+  width: 300px;
+  margin-left: 10%;
+}
+.form .name {
+  padding: 0.5rem;
+  width: 70%;
+  margin: 1rem 0;
+  border: 2px solid black;
+  font-weight: bolder;
+}
+.form .insights {
+  padding-bottom: 20%;
+  padding-top: 0.8rem;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+  border: 2px solid black;
+  font-weight: bolder;
+}
+.submit {
+  padding: 0.8rem;
+  border: none;
+  box-shadow: 5px 7px 5px rgba(0, 0, 0, 1);
+  background-color: rgb(100, 86, 86);
+  width: 35%;
 }
 .social-links {
   display: flex;
