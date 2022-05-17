@@ -2,6 +2,7 @@ import DisplayPopup from './Functions.js';
 
 export default class Api {
   constructor() {
+    // eslint-disable-next-line
     this.InvolvementApiEP =
       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
     this.InvolvementAppID = 'YrrcGavt9pgNOYlenrro';
