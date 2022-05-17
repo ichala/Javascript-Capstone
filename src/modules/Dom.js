@@ -1,3 +1,3 @@
 const Cards = document.querySelector('.cards');
-
-export default Cards;
+const ProductsCounter = document.querySelector('.product-counter');
+export  {ProductsCounter,Cards};

@@ -1,4 +1,4 @@
-import Cards from './Dom.js';
+import {ProductsCounter,Cards} from './Dom.js';
 
 function DisplayCards(data) {
   data.forEach((element) => {
@@ -14,7 +14,7 @@ function DisplayCards(data) {
         <div class="title-container">
             <h3>${element.strCategory}</h3>
             <div class="interactions">
-            <div><i class="fa-solid fa-comment fa-lg"></i>  355  </div>       <div><i class="fa-solid fa-heart fa-lg"></i> 355 </div>
+            <div><i id="${element.idCategory}" class="fa-solid fa-comment fa-lg"></i>  355  </div>       <div><i class="fa-solid fa-heart fa-lg"></i> <b id="${element.idCategory}" class="likes-counter">355</b> </div>
             </div>
             <div>
             ${element.strCategoryDescription.substr(0, 50)}...
@@ -28,4 +28,17 @@ function DisplayCards(data) {
   });
 }
 
-export default DisplayCards;
+function Counter(data) {
+    const LikesCounter = document.querySelectorAll('.likes-counter');
+    ProductsCounter.innerHTML=data.products.length;
+    data.likes.forEach(item => {
+        console.log(LikesCounter);
+        LikesCounter.forEach(counter=>{
+            if(item.item_id === counter.id) {
+                counter.innerHTML=item.likes
+            }
+        })
+    })
+}
+
+export  {DisplayCards , Counter};
