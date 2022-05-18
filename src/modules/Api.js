@@ -3,9 +3,11 @@ import { modal } from './Dom.js';
 
 export default class Api {
   constructor() {
-    this.InvolvementApiEP = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+    this.InvolvementApiEP =
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
     this.InvolvementAppID = 'YrrcGavt9pgNOYlenrro';
     this.FreeMealEP = 'https://www.themealdb.com/api/json/v1/';
+    this.InvolvementAppComm = 'vXgKvecGbONYA7rAAh7N';
   }
 
   GetMealInfos = async (id) => {
@@ -39,5 +41,19 @@ export default class Api {
           });
         });
       });
+  };
+
+  AddComment = async (comment) => {
+    const request = await fetch(
+      `${this.InvolvementApiEP}apps/${this.InvolvementAppComm}/comments`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(comment),
+      }
+    );
+    return request.text();
   };
 }
