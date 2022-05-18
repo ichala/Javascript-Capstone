@@ -1,4 +1,6 @@
-import {DisplayCards,Counter} from './Functions.js';
+import { DisplayPopup, DisplayCards ,Counter } from './Functions.js';
+import { modal } from './Dom.js';
+
 
 export default class Api {
   constructor() {
@@ -7,13 +9,23 @@ export default class Api {
     this.FreeMealEP = 'https://www.themealdb.com/api/json/v1/';
   }
 
-      GetMeals = async () => {
-        await fetch(`${this.FreeMealEP}/1/categories.php`)
-          .then((response) => response.json())
-          .then((json) => { DisplayCards(json.categories); });
-          this.GetStats();
-      }
+  GetMealInfos = async (id) => {
+    await fetch(`${this.FreeMealEP}/1/categories.php`)
+      .then((response) => response.json())
+      .then((json) => {
+        json.categories.forEach((item) => {
+          if (item.idCategory === id) {
+            this.GetExamples(item, id);
+          }
+        });
+      });
+  };
 
+  GetExamples = async (item) => {
+    await fetch(`${this.FreeMealEP}/1/filter.php?c=${item.strCategory}`)
+      .then((response) => response.json())
+      .then((json) => DisplayPopup(item, json));
+  };
       GetStats = async() => {
         let DummyData = {
           likes: [
@@ -112,3 +124,20 @@ export default class Api {
         Counter(DummyData);
       }
 }
+  GetMeals = async () => {
+    await fetch(`${this.FreeMealEP}/1/categories.php`)
+      .then((response) => response.json())
+      .then((json) => {
+        DisplayCards(json.categories);
+        this.GetStats();
+        const comment = document.querySelectorAll('.comment');
+        comment.forEach((item) => {
+          item.addEventListener('click', () => {
+            modal.classList.toggle('hide');
+            this.GetMealInfos(item.id);
+          });
+        });
+      });
+  };
+}
+
