@@ -1,4 +1,5 @@
 import { DisplayPopup, DisplayCards } from './Functions.js';
+import { modal } from './Dom.js';
 
 export default class Api {
   constructor() {
@@ -19,15 +20,24 @@ export default class Api {
       });
   };
 
-  GetExamples = async (item, id) => {
+  GetExamples = async (item) => {
     await fetch(`${this.FreeMealEP}/1/filter.php?c=${item.strCategory}`)
       .then((response) => response.json())
-      .then((json) => DisplayPopup(item, id, json));
+      .then((json) => DisplayPopup(item, json));
   };
 
   GetMeals = async () => {
     await fetch(`${this.FreeMealEP}/1/categories.php`)
       .then((response) => response.json())
-      .then((json) => { DisplayCards(json.categories); });
-  }
+      .then((json) => {
+        DisplayCards(json.categories);
+        const comment = document.querySelectorAll('.comment');
+        comment.forEach((item) => {
+          item.addEventListener('click', () => {
+            modal.classList.toggle('hide');
+            this.GetMealInfos(item.id);
+          });
+        });
+      });
+  };
 }

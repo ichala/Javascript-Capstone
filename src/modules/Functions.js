@@ -1,3 +1,4 @@
+// import AddComentEventListener from '../index.js';
 import { modal, Cards } from './Dom.js';
 
 function DisplayPopup(data, examples) {
@@ -48,7 +49,6 @@ function DisplayPopup(data, examples) {
    
    </div>`;
   const images = document.querySelector('.images');
-
   examples.meals.slice(0, 3).forEach((element) => {
     const div = document.createElement('div');
     div.classList.add('single-product-example');
@@ -71,8 +71,8 @@ function DisplayPopup(data, examples) {
 }
 
 function DisplayCards(data) {
-    data.forEach((element) => {
-      Cards.innerHTML += `
+  data.forEach((element) => {
+    Cards.innerHTML += `
           <div class="card">
           <div class="img-container">
               <div class="img-hold">
@@ -95,7 +95,8 @@ function DisplayCards(data) {
   
       </div>
           `;
-    });
-  }
+  });
+//   AddComentEventListener();
+}
 
 export { DisplayPopup, DisplayCards };
