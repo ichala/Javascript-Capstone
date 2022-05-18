@@ -1,5 +1,4 @@
-import {ProductsCounter,modal,Cards} from './Dom.js';
-
+import { ProductsCounter, modal, Cards } from './Dom.js';
 
 function DisplayPopup(data, examples) {
   modal.innerHTML = ` <div class="closeBtn">X</div>
@@ -46,12 +45,12 @@ function DisplayPopup(data, examples) {
             </div>
         </div>
         <div class="title-container">
-            <h3>${element.strCategory}</h3>
+            <h3>${data.strCategory}</h3>
             <div class="interactions">
-            <div><i id="${element.idCategory}" class="fa-solid fa-comment fa-lg"></i>  355  </div>       <div><i class="fa-solid fa-heart fa-lg"></i> <b id="${element.idCategory}" class="likes-counter">355</b> </div>
+            <div><i id="${data.idCategory}" class="fa-solid fa-comment fa-lg"></i>  355  </div>       <div><i class="fa-solid fa-heart fa-lg"></i> <b id="${data.idCategory}" class="likes-counter">355</b> </div>
             </div>
             <div>
-            ${element.strCategoryDescription.substr(0, 50)}...
+            ${data.strCategoryDescription.substr(0, 50)}...
             </div>
             
         <button class="button comment"><i class="fa-solid fa-comments"></i> Comments</button>
@@ -110,16 +109,15 @@ function DisplayCards(data) {
 }
 
 function Counter(data) {
-    const LikesCounter = document.querySelectorAll('.likes-counter');
-    ProductsCounter.innerHTML=data.products.length;
-    // data.likes.forEach(item => {
-    //     LikesCounter.forEach(counter=>{
-    //         if(item.item_id === counter.id) {
-    //             counter.innerHTML=item.likes
-    //         }
-    //     })
-    // })
+//   const LikesCounter = document.querySelectorAll('.likes-counter');
+  ProductsCounter.innerHTML = data.products.length;
+  // data.likes.forEach(item => {
+  //     LikesCounter.forEach(counter=>{
+  //         if(item.item_id === counter.id) {
+  //             counter.innerHTML=item.likes
+  //         }
+  //     })
+  // })
 }
 
-export  {DisplayCards ,DisplayPopup, Counter};
-
+export { DisplayCards, DisplayPopup, Counter };
