@@ -4,7 +4,6 @@ import Api from './modules/Api.js';
 
 const ApiCalls = new Api();
 
-
 ApiCalls.GetMeals();
 comment.forEach((item) => {
   item.addEventListener('click', () => {
@@ -12,4 +11,3 @@ comment.forEach((item) => {
     ApiCalls.GetMealInfos(comment.id);
   });
 });
-

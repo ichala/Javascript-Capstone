@@ -1,7 +1,4 @@
-
-import DisplayPopup,DisplayCards from './Functions.js';
-
-
+import { DisplayPopup, DisplayCards } from './Functions.js';
 
 export default class Api {
   constructor() {
@@ -9,7 +6,6 @@ export default class Api {
     this.InvolvementAppID = 'YrrcGavt9pgNOYlenrro';
     this.FreeMealEP = 'https://www.themealdb.com/api/json/v1/';
   }
-
 
   GetMealInfos = async (id) => {
     await fetch(`${this.FreeMealEP}/1/categories.php`)
@@ -28,9 +24,10 @@ export default class Api {
       .then((response) => response.json())
       .then((json) => DisplayPopup(item, id, json));
   };
+
   GetMeals = async () => {
-        await fetch(`${this.FreeMealEP}/1/categories.php`)
-          .then((response) => response.json())
-          .then((json) => { DisplayCards(json.categories); });
-      }
+    await fetch(`${this.FreeMealEP}/1/categories.php`)
+      .then((response) => response.json())
+      .then((json) => { DisplayCards(json.categories); });
+  }
 }

@@ -1,4 +1,4 @@
-import { modal,Cards } from './Dom.js';
+import { modal, Cards } from './Dom.js';
 
 function DisplayPopup(data, examples) {
   modal.innerHTML = ` <div class="closeBtn">X</div>
@@ -98,5 +98,4 @@ function DisplayCards(data) {
   });
 }
 
-export DisplayPopup , DisplayCards;
-
+export { DisplayPopup, DisplayCards };
