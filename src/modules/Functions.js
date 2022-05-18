@@ -109,15 +109,7 @@ function DisplayCards(data) {
 }
 
 function Counter(data) {
-//   const LikesCounter = document.querySelectorAll('.likes-counter');
   ProductsCounter.innerHTML = data.products.length;
-  // data.likes.forEach(item => {
-  //     LikesCounter.forEach(counter=>{
-  //         if(item.item_id === counter.id) {
-  //             counter.innerHTML=item.likes
-  //         }
-  //     })
-  // })
 }
 
 export { DisplayCards, DisplayPopup, Counter };
