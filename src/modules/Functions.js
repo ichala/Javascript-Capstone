@@ -1,5 +1,4 @@
-// import AddComentEventListener from '../index.js';
-import { modal, Cards } from './Dom.js';
+import { ProductsCounter, modal, Cards } from './Dom.js';
 
 function DisplayPopup(data, examples) {
   modal.innerHTML = ` <div class="closeBtn">X</div>
@@ -45,8 +44,6 @@ function DisplayPopup(data, examples) {
                 </div>
             </div>
         </div>
-   
-   
    </div>`;
   const images = document.querySelector('.images');
   examples.meals.slice(0, 3).forEach((element) => {
@@ -56,6 +53,7 @@ function DisplayPopup(data, examples) {
     <div class="img-popholdpop">
         <div class="imgex">
             <img src=${element.strMealThumb}>
+
         </div>
     </div>
     <p class="title-example">${element.strMeal.substr(0, 15)}</p>
@@ -79,7 +77,7 @@ function DisplayCards(data) {
                   <div class="img">
                       <img src="${element.strCategoryThumb}">
                   </div>
-              </div>
+              </div>//   const LikesCounter = document.querySelectorAll('.likes-counter');
           </div>
           <div class="title-container">
               <h3>${element.strCategory}</h3>
@@ -102,7 +100,11 @@ function DisplayCards(data) {
       </div>
           `;
   });
-  //   AddComentEventListener();
+
 }
 
-export { DisplayPopup, DisplayCards };
+function Counter(data) {
+  ProductsCounter.innerHTML = data.products.length;
+}
+
+export { DisplayCards, DisplayPopup, Counter };
