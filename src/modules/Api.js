@@ -3,8 +3,7 @@ import { modal } from './Dom.js';
 
 export default class Api {
   constructor() {
-    this.InvolvementApiEP =
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+    this.InvolvementApiEP = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
     this.InvolvementAppID = 'YrrcGavt9pgNOYlenrro';
     this.FreeMealEP = 'https://www.themealdb.com/api/json/v1/';
   }
@@ -51,11 +50,9 @@ export default class Api {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-      }
+      },
     )
       .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-      });
+      .then((json) => json);
   };
 }
