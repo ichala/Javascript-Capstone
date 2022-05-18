@@ -1,7 +1,8 @@
 import { modal } from './Dom.js';
 
 function DisplayPopup(data, id, examples) {
-  modal.innerHTML = ` <div class="popup">
+  modal.innerHTML = ` <div class="closeBtn">X</div>
+  <div class="popup">
             <div class="popup-header" >
                 
                     <div class="img-popcontainer">
@@ -48,7 +49,7 @@ function DisplayPopup(data, id, examples) {
    </div>`;
   const images = document.querySelector('.images');
 
-  examples.meals.slice(0, 4).forEach((element) => {
+  examples.meals.slice(0, 3).forEach((element) => {
     const div = document.createElement('div');
     div.classList.add('single-product-example');
     div.innerHTML = ` 
@@ -60,6 +61,12 @@ function DisplayPopup(data, id, examples) {
     <p class="title-example">${element.strMeal}</p>
 `;
     images.appendChild(div);
+  });
+
+  const closeBtn = document.querySelector('.closeBtn');
+
+  closeBtn.addEventListener('click', (e) => {
+    modal.classList.toggle('hide');
   });
 }
 
