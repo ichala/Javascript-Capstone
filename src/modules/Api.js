@@ -23,7 +23,23 @@ export default class Api {
   GetExamples = async (item) => {
     await fetch(`${this.FreeMealEP}/1/filter.php?c=${item.strCategory}`)
       .then((response) => response.json())
-      .then((json) => DisplayPopup(item, json));
+      .then((json) => {
+        DisplayPopup(item, json);
+
+        const form = document.querySelector('.form');
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const username = document.getElementById('name').value;
+          const comment = document.getElementById('comment').value;
+          const button = document.querySelector('.comment').id;
+          const newComment = {
+            username,
+            comment,
+            item_id: button,
+          };
+          this.AddComment(newComment);
+        });
+      });
   };
 
   GetMeals = async () => {

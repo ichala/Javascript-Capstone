@@ -1,6 +1,5 @@
 // import AddComentEventListener from '../index.js';
 import { modal, Cards } from './Dom.js';
-import saveComment from '../index.js';
 
 function DisplayPopup(data, examples) {
   modal.innerHTML = ` <div class="closeBtn">X</div>
@@ -68,20 +67,6 @@ function DisplayPopup(data, examples) {
 
   closeBtn.addEventListener('click', () => {
     modal.classList.toggle('hide');
-  });
-
-  const form = document.querySelector('.form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const username = document.getElementById('name').value;
-    const comment = document.getElementById('comment').value;
-    const button = document.querySelector('.comment').id;
-    const newComment = {
-      username,
-      comment,
-      item_id: button,
-    };
-    saveComment(newComment);
   });
 }
 
