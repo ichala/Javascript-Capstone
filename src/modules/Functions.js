@@ -1,6 +1,6 @@
 import { modal } from './Dom.js';
 
-function DisplayPopup(data, id, examples) {
+function DisplayPopup(data, examples) {
   modal.innerHTML = ` <div class="closeBtn">X</div>
   <div class="popup">
             <div class="popup-header" >
@@ -58,7 +58,7 @@ function DisplayPopup(data, id, examples) {
             <img src=${element.strMealThumb}>
         </div>
     </div>
-    <p class="title-example">${element.strMeal}</p>
+    <p class="title-example">${element.strMeal.substr(0, 15)}</p>
 `;
     images.appendChild(div);
   });

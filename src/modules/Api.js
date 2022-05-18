@@ -2,9 +2,7 @@ import DisplayPopup from './Functions.js';
 
 export default class Api {
   constructor() {
-    // eslint-disable-next-line
-    this.InvolvementApiEP =
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+    this.InvolvementApiEP = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
     this.InvolvementAppID = 'YrrcGavt9pgNOYlenrro';
     this.FreeMealEP = 'https://www.themealdb.com/api/json/v1/';
   }
