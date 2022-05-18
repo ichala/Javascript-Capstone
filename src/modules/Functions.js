@@ -31,14 +31,13 @@ function DisplayCards(data) {
 function Counter(data) {
     const LikesCounter = document.querySelectorAll('.likes-counter');
     ProductsCounter.innerHTML=data.products.length;
-    data.likes.forEach(item => {
-        console.log(LikesCounter);
-        LikesCounter.forEach(counter=>{
-            if(item.item_id === counter.id) {
-                counter.innerHTML=item.likes
-            }
-        })
-    })
+    // data.likes.forEach(item => {
+    //     LikesCounter.forEach(counter=>{
+    //         if(item.item_id === counter.id) {
+    //             counter.innerHTML=item.likes
+    //         }
+    //     })
+    // })
 }
 
 export  {DisplayCards , Counter};
