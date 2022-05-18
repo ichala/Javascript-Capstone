@@ -100,7 +100,6 @@ function DisplayCards(data) {
       </div>
           `;
   });
-
 }
 
 function Counter(data) {
