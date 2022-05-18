@@ -65,7 +65,7 @@ function DisplayPopup(data, id, examples) {
 
   const closeBtn = document.querySelector('.closeBtn');
 
-  closeBtn.addEventListener('click', (e) => {
+  closeBtn.addEventListener('click', () => {
     modal.classList.toggle('hide');
   });
 }
