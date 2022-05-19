@@ -32,7 +32,7 @@ export default class Api {
       .then((response) => response.json())
       .then((json) => {
         DisplayPopup(item, json);
-
+        this.CountComments(item.idCategory);
         this.DisplayComm(item.idCategory);
 
         const form = document.querySelector('.form');
@@ -251,13 +251,15 @@ export default class Api {
       }
     );
   };
-  CountComments = async () => {
+  CountComments = async (data) => {
     await fetch(
       `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/comments?item_id=${data}`
-    ).then((response) => response.json())
+    )
+      .then((response) => response.json())
       .then((json) => {
         if (json.constructor === Array) {
           CountComment(json);
         }
+      });
   };
 }
