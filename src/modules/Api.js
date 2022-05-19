@@ -38,7 +38,7 @@ export default class Api {
           e.preventDefault();
           const username = document.getElementById('name').value;
 
-           const comment = document.querySelector('#comment').value;
+          const comment = document.querySelector('#comment').value;
           const button = document.querySelector('.submit').id;
           if (username && comment) {
             const newComment = {
