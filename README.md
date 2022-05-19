@@ -40,7 +40,11 @@
 
 ## Video presentation
 
-[View with Zoom]()
+[View with Zoom](https://drive.google.com/file/d/1gdzn9vXAoL6oqAK1gyBKHHbU7T90774y/view?usp=sharing)
+
+## Live version
+
+[Website Live Preview](https://chala.dev/)
 
 <hr />
 
@@ -58,9 +62,6 @@ The project has two user interfaces;
 
 <!-- ABOUT THE PROJECT -->
 
-## Live version
-
-You can see it working
 
 ## Application Instructions
 
