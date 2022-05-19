@@ -10,6 +10,6 @@ describe('Comments and items counter', () => {
   test('Count Comments', () => {
     const array = ['item1', 'item2'];
     calculateComments(array);
-    expect(calculateComments(array)).toEqual(`Total Comments(2)`);
+    expect(calculateComments(array)).toEqual('Total Comments(2)');
   });
 });
