@@ -2,13 +2,15 @@ import {
   DisplayPopup,
   DisplayCards,
   Counter,
+  CountComment,
   DisplayComments,
 } from './Functions.js';
 import { modal } from './Dom.js';
 
 export default class Api {
   constructor() {
-    this.InvolvementApiEP = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+    this.InvolvementApiEP =
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
     this.InvolvementAppID = 'nt6MV6FCiUNpFq4MPkDA';
     this.FreeMealEP = 'https://www.themealdb.com/api/json/v1/';
   }
@@ -218,14 +220,14 @@ export default class Api {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-      },
+      }
     );
     this.DisplayComm(data.item_id);
   };
 
   DisplayComm = async (data) => {
     await fetch(
-      `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/comments?item_id=${data}`,
+      `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/comments?item_id=${data}`
     )
       .then((response) => response.json())
       .then((json) => {
@@ -246,7 +248,16 @@ export default class Api {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-      },
+      }
     );
+  };
+  CountComments = async () => {
+    await fetch(
+      `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/comments?item_id=${data}`
+    ).then((response) => response.json())
+      .then((json) => {
+        if (json.constructor === Array) {
+          CountComment(json);
+        }
   };
 }
