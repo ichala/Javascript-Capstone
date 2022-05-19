@@ -83,10 +83,9 @@ You can see it working
             - The selected API and shows details about the selected item.
             - The Involvement API to show the item reservations.
         - When the user clicks on the "Reserve" button, the data is recorded in the Involvement API and the screen is updated.
-
-- Counters: The counters in all the interfaces should show:
-  - The number of items (home).
-  - The number of comments (comments popup).
+    - Counters: The counters in all the interfaces should show:
+        - The number of items (home).
+        - The number of comments (comments popup).
 
 ## Dependencies
 
