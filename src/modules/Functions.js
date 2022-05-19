@@ -113,8 +113,12 @@ function DisplayComments(data) {
   commentSection.innerHTML = comment;
 }
 
+function countProducts(data) {
+  return data.length;
+}
+
 function Counter(data) {
-  ProductsCounter.innerHTML = data.length;
+  ProductsCounter.innerHTML = countProducts(data);
 }
 
 function CounterLikes(data) {
