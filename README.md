@@ -30,12 +30,12 @@
 
 #### Homepage
 
-<img src="https://storage.googleapis.com/opinions-bucket/images/sign-up.png" alt="program interface">
-<hr />
+[homepage screenshot](./src/assets/homepage.png)
 
 #### PopupWindow
 
-<img src="https://storage.googleapis.com/opinions-bucket/images/log-in.png" alt="program interface">
+[popup-window](./src/assets/popup.png)
+
 <hr />
 
 ## Video presentation
