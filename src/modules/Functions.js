@@ -149,5 +149,12 @@ function CounterLikes(data) {
 }
 
 export {
-  DisplayCards, DisplayPopup, Counter, DisplayComments, CountComment, CounterLikes,
+  DisplayCards,
+  DisplayPopup,
+  Counter,
+  DisplayComments,
+  CountComment,
+  CounterLikes,
+  calculateComments,
+  countProducts,
 };
