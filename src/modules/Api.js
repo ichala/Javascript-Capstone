@@ -227,6 +227,6 @@ export default class Api {
           'Content-type': 'application/json; charset=UTF-8',
         },
       },
-    )
+    );
   };
 }
