@@ -29,8 +29,8 @@ function DisplayPopup(data, examples) {
                     <div class="container-comments">
                         <form class="form">
                     
-                    <textarea id="comment" type="text" placeholder="Comment"/></textarea>
-                    <div class="form-header"><input id="name" type="text" placeholder="Name" /> <button class="submit" id="${data.idCategory}">submit</button></div>
+                    <textarea id="comment" type="text" placeholder="Comment" required/></textarea>
+                    <div class="form-header"><input required id="name" type="text" placeholder="Name" /> <button class="submit" id="${data.idCategory}">submit</button></div>
                         </form>
                         <div class="Comment-counter">
                         Total Comments(0)
@@ -122,7 +122,7 @@ function DisplayComments(data) {
   data.forEach((item) => {
     comment += `<li class="single-comment">
       <img class="user" src="https://www.w3schools.com/howto/img_avatar.png" alt="user" >
-      <b class="user-comment">${item.comment}</b>
+      <b class="user-comment">${item.username}: ${item.comment}</b>
       </li>`;
   });
   commentSection.innerHTML = comment;
