@@ -62,6 +62,7 @@ export default class Api {
   };
 
   GetMeals = async () => {
+    document.querySelector('.cards').innerHTML=' <div class="spinner" ><i class="fas fa-spinner fa-spin fa-5x"></i></div>';
     await fetch(`${this.FreeMealEP}/1/categories.php`)
       .then((response) => response.json())
       .then((json) => {

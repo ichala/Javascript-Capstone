@@ -71,6 +71,7 @@ function DisplayPopup(data, examples) {
 }
 
 function DisplayCards(data) {
+  document.querySelector('.cards').innerHTML='';
   data.forEach((element) => {
     Cards.innerHTML += `
           <div class="card">
@@ -84,9 +85,7 @@ function DisplayCards(data) {
           <div class="title-container">
               <h3>${element.strCategory}</h3>
               <div class="interactions">
-              <div><i id="${
-  element.idCategory
-}" class="fa-solid fa-comment fa-lg"></i>  355  </div>       <div><i id="${
+              <div></div>       <div><i id="${
   element.idCategory
 }" class="fa-solid fa-heart fa-lg"></i> <b id="${
   element.idCategory
