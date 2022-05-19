@@ -22,7 +22,7 @@
 - [Testing](#testing)
 - [Built With](#built-with)
 - [Contributors](#contributors)
-- [Acknowledgements](#Acknowledgements)
+- [Acknowledgements](#acknowledgements)
 
 <hr />
 
@@ -122,7 +122,14 @@ You can see it working
 
 ## Testing
 
-- Tests have been performed using jest
+- Tests have been performed using jest.
+- To run test on the project,
+  Run
+
+```
+  npm run test
+```
+
 - Location /src/modules/functions.test.js
 
 ## Built With
