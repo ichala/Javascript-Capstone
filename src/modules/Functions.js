@@ -71,7 +71,7 @@ function DisplayPopup(data, examples) {
 }
 
 function DisplayCards(data) {
-  document.querySelector('.cards').innerHTML='';
+  document.querySelector('.cards').innerHTML = '';
   data.forEach((element) => {
     Cards.innerHTML += `
           <div class="card">

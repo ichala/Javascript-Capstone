@@ -29,7 +29,7 @@ export default class Api {
 
   GetExamples = async (item) => {
     const modal = document.querySelector('.popup-container');
-    modal.innerHTML=' <div class="spinner" ><i class="fas fa-spinner fa-spin fa-5x"></i></div>';
+    modal.innerHTML = ' <div class="spinner" ><i class="fas fa-spinner fa-spin fa-5x"></i></div>';
     await fetch(`${this.FreeMealEP}/1/filter.php?c=${item.strCategory}`)
       .then((response) => response.json())
       .then((json) => {
@@ -62,7 +62,7 @@ export default class Api {
   };
 
   GetMeals = async () => {
-    document.querySelector('.cards').innerHTML=' <div class="spinner" ><i class="fas fa-spinner fa-spin fa-5x"></i></div>';
+    document.querySelector('.cards').innerHTML = ' <div class="spinner" ><i class="fas fa-spinner fa-spin fa-5x"></i></div>';
     await fetch(`${this.FreeMealEP}/1/categories.php`)
       .then((response) => response.json())
       .then((json) => {
@@ -94,9 +94,9 @@ export default class Api {
   };
 
   AddComment = async (data) => {
-   document.getElementById('name').setAttribute('disabled', '');
-   document.querySelector('#comment').setAttribute('disabled', '');
-   document.querySelector('.submit').innerHTML=' <i class="fas fa-spinner fa-spin fa-1x"></i>';
+    document.getElementById('name').setAttribute('disabled', '');
+    document.querySelector('#comment').setAttribute('disabled', '');
+    document.querySelector('.submit').innerHTML = ' <i class="fas fa-spinner fa-spin fa-1x"></i>';
     await fetch(
       `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/comments`,
       {
@@ -106,17 +106,17 @@ export default class Api {
           'Content-type': 'application/json; charset=UTF-8',
         },
       },
-    ).then(()=>{
+    ).then(() => {
       document.getElementById('name').removeAttribute('disabled');
       document.querySelector('#comment').removeAttribute('disabled');
-      document.querySelector('.submit').innerHTML='submit';
+      document.querySelector('.submit').innerHTML = 'submit';
     });
     this.DisplayComm(data.item_id);
   };
 
   DisplayComm = async (data) => {
     const CommentList = document.querySelector('.comments');
-    CommentList.innerHTML=' <i class="fas fa-spinner fa-spin fa-2x"></i>';
+    CommentList.innerHTML = ' <i class="fas fa-spinner fa-spin fa-2x"></i>';
     await fetch(
       `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/comments?item_id=${data}`,
     )
@@ -124,12 +124,10 @@ export default class Api {
       .then((json) => {
         if (json.constructor === Array) {
           DisplayComments(json);
-        }else{
-          CommentList.innerHTML='';
-         
+        } else {
+          CommentList.innerHTML = '';
         }
       });
-
   };
 
   AddLike = async (id) => {
