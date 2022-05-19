@@ -2,6 +2,7 @@ import {
   DisplayPopup,
   DisplayCards,
   Counter,
+  CountComment,
   DisplayComments,
   CounterLikes,
 } from './Functions.js';
@@ -31,7 +32,7 @@ export default class Api {
       .then((response) => response.json())
       .then((json) => {
         DisplayPopup(item, json);
-
+        this.CountComments(item.idCategory);
         this.DisplayComm(item.idCategory);
 
         const form = document.querySelector('.form');
@@ -130,13 +131,27 @@ export default class Api {
     );
   };
 
-  CountLikes = async () => {
+
+   CountLikes = async () => {
     await fetch(
       `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/likes/`,
     ).then((response) => response.json())
       .then((json) => {
         if (json.constructor === Array) {
           CounterLikes(json);
+        }
+      });
+  };
+
+  CountComments = async (data) => {
+    await fetch(
+      `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/comments?item_id=${data}`,
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        if (json.constructor === Array) {
+          CountComment(json);
+
         }
       });
   };
