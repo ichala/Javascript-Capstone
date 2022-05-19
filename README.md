@@ -30,11 +30,11 @@
 
 #### Homepage
 
-[homepage screenshot](./src/assets/homepage.png)
+![homepage screenshot](./src/assets/homepage.png)
 
 #### PopupWindow
 
-[popup-window](./src/assets/popup.png)
+![popup-window](./src/assets/popup.png)
 
 <hr />
 
