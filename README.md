@@ -64,6 +64,30 @@ You can see it working
 
 ## Application Instructions
 
+    - Home page
+        - When the page loads, the webapp retrieves data from:
+            - The selected API and shows the list of items on screen.
+            - The Involvement API to show the item likes.
+            - The page should make only 2 requests:
+                - One to the base API.
+                - And one to the Involvement API.
+        - When the user clicks on the Like button of an item, the interaction is recorded in the Involvement API and the screen is updated.
+        - When the user clicks on the "Comments" button, the Comments popup appears.
+
+    - Comments popup
+        - When the popup loads, the webapp retrieves data from:
+            -The selected API and shows details about the selected item.
+            -The Involvement API to show the item comments.
+        - When the user clicks on the "Comment" button, the data is recorded in the Involvement API and the screen is updated.
+        - When the popup loads, the webapp retrieves data from:
+            - The selected API and shows details about the selected item.
+            - The Involvement API to show the item reservations.
+        - When the user clicks on the "Reserve" button, the data is recorded in the Involvement API and the screen is updated.
+
+- Counters: The counters in all the interfaces should show:
+  - The number of items (home).
+  - The number of comments (comments popup).
+
 ## Dependencies
 
 - Webpack
