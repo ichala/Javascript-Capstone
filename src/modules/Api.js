@@ -1,10 +1,15 @@
-import { DisplayPopup, DisplayCards, Counter } from './Functions.js';
+import {
+  DisplayPopup,
+  DisplayCards,
+  Counter,
+  DisplayComments,
+} from './Functions.js';
 import { modal } from './Dom.js';
 
 export default class Api {
   constructor() {
     this.InvolvementApiEP = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
-    this.InvolvementAppID = 'YrrcGavt9pgNOYlenrro';
+    this.InvolvementAppID = 'nt6MV6FCiUNpFq4MPkDA';
     this.FreeMealEP = 'https://www.themealdb.com/api/json/v1/';
   }
 
@@ -25,19 +30,24 @@ export default class Api {
       .then((response) => response.json())
       .then((json) => {
         DisplayPopup(item, json);
+
+        this.DisplayComm(item.idCategory);
+
         const form = document.querySelector('.form');
         form.addEventListener('submit', (e) => {
           e.preventDefault();
           const username = document.getElementById('name').value;
-          const comment = document.getElementById('comment').value;
-          const button = document.querySelector('.comment').id;
-          const newComment = {
-            username,
-            comment,
-            item_id: button,
-          };
 
-          this.AddComment(newComment);
+           const comment = document.querySelector('#comment').value;
+          const button = document.querySelector('.submit').id;
+          if (username && comment) {
+            const newComment = {
+              username,
+              comment,
+              item_id: button,
+            };
+            this.AddComment(newComment);
+          }
         });
       });
   };
@@ -165,7 +175,6 @@ export default class Api {
         },
       ],
     };
-
     Counter(DummyData);
   };
 
@@ -210,9 +219,20 @@ export default class Api {
           'Content-type': 'application/json; charset=UTF-8',
         },
       },
+    );
+    this.DisplayComm(data.item_id);
+  };
+
+  DisplayComm = async (data) => {
+    await fetch(
+      `${this.InvolvementApiEP}apps/${this.InvolvementAppID}/comments?item_id=${data}`,
     )
       .then((response) => response.json())
-      .then((json) => json);
+      .then((json) => {
+        if (json.constructor === Array) {
+          DisplayComments(json);
+        }
+      });
   };
 
   AddLike = async (id) => {
